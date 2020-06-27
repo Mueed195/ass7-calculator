@@ -1,0 +1,127 @@
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+	
+	<style>
+		.data_field{
+			width: 98%;
+			height: 14%;
+			margin: 10px;
+			background-color: #2A2A2A;
+			color:white;
+			font-size: 30px;
+		}
+		.buttons{
+			margin: 10px;
+		}
+		
+		.btn{
+			width: 24%;
+			padding: 15px 0px;
+			margin: 2px;
+		}
+		
+		.res_btn{
+			border:2px solid;
+			width: 49%;
+			padding: 15px 0px;
+		}
+		
+		
+		.c_Btn{
+			border:2px solid;
+			width: 73%;
+			padding: 14px 0px;
+		}
+		.act_btn{
+			border:1px solid;
+			width: 24%;
+			padding: 14px 0px;
+			background-color:#E2E2E2;
+		}
+		
+		
+	</style>
+    
+</head>
+
+<body>
+	<div class="main">
+        <div>
+            <input type="text" class="data_field" id="inp_field" >
+        </div>
+        <div class="buttons">
+		    <button class="c_Btn" onclick="clear_input()">C</button>
+            <button class="act_btn" onclick="take_num('/')">/</button>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="take_num('7')">7</button>
+            <button class="btn" onclick="take_num('8')">8</button>
+            <button class="btn" onclick="take_num('9')">9</button>
+            <button class="act_btn" onclick="take_num('*')">X</button>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="take_num('4')">4</button>
+            <button class="btn" onclick="take_num('5')">5</button>
+            <button class="btn" onclick="take_num('6')">6</button>
+            <button class="act_btn" onclick="take_num('-')">-</button>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="take_num('1')">1</button>
+            <button class="btn" onclick="take_num('2')">2</button>
+            <button class="btn" onclick="take_num('3')">3</button>
+            <button class="act_btn" onclick="take_num('+')">+</button>
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="take_num('0')">0</button>
+            <button class="btn" onclick="take_num('.')">.</button>
+            <button class="res_btn" onclick="show_result()">=</button>
+        </div> 	
+        
+    </div>
+    
+</body>
+
+<script>
+
+function take_num(num){
+    var output = document.getElementById("inp_field");
+    output.value += num;
+}
+
+function clear_input(){
+    var output = document.getElementById("inp_field");
+    output.value = "0";
+}
+
+function show_result(){
+    var output = document.getElementById("inp_field");
+    output.value = eval(output.value);
+}
+
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
